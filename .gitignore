@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+
+n8n_data/
+postgres_data/
+backups/
+*.sqlite
+*.db
+
+*-private.json
