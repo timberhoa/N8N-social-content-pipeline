@@ -1,0 +1,2751 @@
+{
+  "name": "Social Content Pipeline — Public Template",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "db716322-5129-4fef-b9c4-04474c54b931",
+      "name": "Run manually — xem hướng dẫn",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1904,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "5a10298b-aad4-4234-8103-d33ed9963854",
+      "name": "Tạo bài — Dép bánh mì NS01",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "10a046a0-1bb0-40a9-953c-348827ff5f3a",
+      "name": "Tạo bài — Đế trấu NS02",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        704
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "ea0cf412-8494-4e99-83bf-564b410ab7fc",
+      "name": "Tạo bài — Đế trấu NS04",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        1008
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "4ff50dad-8b28-4c1f-ba7d-c928989fa907",
+      "name": "Tạo bài — Dép lá NS07",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        864
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "bedfbb95-2b66-4f5b-acc1-10d4e78d5152",
+      "name": "Tạo bài — Mũ snapback",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        1264
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "75d80a67-e846-44b3-b853-d9d63c910bcf",
+      "name": "Tạo bài — Dép NS05",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        1136
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "c2a7fa4e-d149-42b9-9c66-bb25a365edde",
+      "name": "Tạo bài — Túi",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        1392
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b36a8473-f339-4dee-8d11-c57daf2e892e",
+      "name": "Tạo bài — Shonhou ST405",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        1536
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "492cb34a-f085-4797-a4cc-e701fb54f607",
+      "name": "Tạo bài — Shonhou ST406",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "704dc5a7-1ba7-4378-a212-5aa23108f0eb",
+      "name": "Tạo bài — Shonhou ST407",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        1840
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "1650f4dd-a782-4fe9-b35a-b563b7532d09",
+      "name": "Tạo bài — Shonhou ST408",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        1984
+      ]
+    },
+    {
+      "parameters": {
+        "prompt": "=={{ `Bạn là người viết nội dung bán hàng cho fanpage Unicorn Brand.\n\nViết 1 bài Facebook bằng tiếng Việt cho sản phẩm:\n- Tên: ${$json.product_name}\n- Danh mục: ${$json.category}\n- Giá: ${$json.sale_price_vnd}\n- Màu sắc: ${$json.colors}\n- Kích cỡ: ${$json.sizes}\n- Mô tả/đặc điểm: ${$json.description_source}\n\nBố cục bắt buộc:\n1. Một tiêu đề ngắn, viết IN HOA, có 1 emoji phù hợp.\n2. Một đoạn giới thiệu ngắn 1–2 câu.\n3. 3–5 gạch đầu dòng, mỗi dòng bắt đầu bằng ✅; chỉ nêu thông tin có trong dữ liệu.\n4. Giữ NGUYÊN VĂN khối bên dưới, không sửa chữ, không đổi link, không thêm bớt dòng:\n\nAnh/chị đang cần tư vấn size hoặc muốn xem thêm màu khác, hãy nhắn tin ngay cho Unicorn Brand nhé.\n🛒 Đặt hàng tại Shopee: https://s.shopee.vn/2gAFtzdVK#D\n🛒 Mua hàng tại Tiktok: https://vt.tiktok.com/ZS9k1gwYWPfCD-SmfXF/\n\n5. Cuối bài thêm 4–6 hashtag ngắn, phù hợp sản phẩm.\n\nYêu cầu:\n- Giọng gần gũi, tự nhiên, không phóng đại.\n- Không tự tạo ưu đãi, bảo hành, quà tặng, chất liệu, giá hoặc thông tin không có trong dữ liệu.\n- Không giải thích. Chỉ xuất bài viết hoàn chỉnh.` }}"
+      },
+      "id": "84748531-fcfe-45a2-99c9-bdcc3d3f3ca4",
+      "name": "Tạo caption Facebook",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1,
+      "position": [
+        2864,
+        1488
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "fc80286c-bbbe-4325-afed-f409828a7958",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        2864,
+        1648
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "",
+          "cachedResultUrl": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "",
+          "cachedResultUrl": ""
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2576,
+        1184
+      ],
+      "id": "5eea235b-25c7-4907-8dce-4bb28a9449b1",
+      "name": "Get row(s) in sheet"
+    },
+    {
+      "parameters": {
+        "formTitle": "Unicorn Store — Tạo bài đăng",
+        "formDescription": "Chọn sản phẩm cần tạo nội dung và hình ảnh. Hệ thống chỉ tạo bản nháp để duyệt.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Chọn sản phẩm cần tạo bài",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "NS01"
+                  },
+                  {
+                    "option": "NS02"
+                  },
+                  {
+                    "option": "NS04"
+                  },
+                  {
+                    "option": "NS07"
+                  },
+                  {
+                    "option": "NSN01"
+                  },
+                  {
+                    "option": "NS05"
+                  },
+                  {
+                    "option": "ST405"
+                  },
+                  {
+                    "option": "ST406"
+                  },
+                  {
+                    "option": "ST407"
+                  },
+                  {
+                    "option": "ST408"
+                  },
+                  {
+                    "option": "NST01"
+                  }
+                ]
+              },
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.6,
+      "position": [
+        1712,
+        1168
+      ],
+      "id": "62968558-68e3-4dfe-8694-11b31d3bc977",
+      "name": "On form submission",
+      "webhookId": "1446196a-4cb4-4a7a-8d78-508138ddbbad"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json[\"Chọn sản phẩm cần tạo bài\"] }}",
+                    "rightValue": "NS01",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "b6405fcd-0079-4a47-9dd4-2b232ac309a4"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "NS01"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "3bfe3ccc-a3ba-4f11-aa4a-499d2b10c7ee",
+                    "leftValue": "={{ $json[\"Chọn sản phẩm cần tạo bài\"] }}",
+                    "rightValue": "NS02",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "NS02"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "d1b6d7dc-77bb-4b91-8cb3-ba65e3cb6e43",
+                    "leftValue": "={{ $json[\"Chọn sản phẩm cần tạo bài\"] }}",
+                    "rightValue": "NS07",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "NS07"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "32b4db12-3eae-42d7-9cbf-f8695a085e4b",
+                    "leftValue": "={{ $json[\"Chọn sản phẩm cần tạo bài\"] }}",
+                    "rightValue": "NS04",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "NS04"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "abf2060d-70cd-4354-abaf-aedcb2ef620a",
+                    "leftValue": "={{ $json[\"Chọn sản phẩm cần tạo bài\"] }}",
+                    "rightValue": "NS05",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "NS05"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "1dcfb484-6efd-4195-aa20-6a6ef671a123",
+                    "leftValue": "={{ $json[\"Chọn sản phẩm cần tạo bài\"] }}",
+                    "rightValue": "NSN01",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "NSN01"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "a0ca7948-1006-472e-aa0b-0694ece26357",
+                    "leftValue": "={{ $json[\"Chọn sản phẩm cần tạo bài\"] }}",
+                    "rightValue": "NST01",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "NST01"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "1f3e9fe1-6552-41c9-ae49-ad883dbe0320",
+                    "leftValue": "={{ $json[\"Chọn sản phẩm cần tạo bài\"] }}",
+                    "rightValue": "ST405",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ST405"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "b3771b72-b7c1-4c06-b2fd-5e58764215f7",
+                    "leftValue": "={{ $json[\"Chọn sản phẩm cần tạo bài\"] }}",
+                    "rightValue": "ST406",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ST406"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "b875bb4f-0bcf-42d1-b8c0-15f42bb4b106",
+                    "leftValue": "={{ $json[\"Chọn sản phẩm cần tạo bài\"] }}",
+                    "rightValue": "ST407",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ST407"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "6ff6593c-72e3-43da-9838-7bbae790155b",
+                    "leftValue": "={{ $json[\"Chọn sản phẩm cần tạo bài\"] }}",
+                    "rightValue": "ST408",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ST408"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        1920,
+        1024
+      ],
+      "id": "13ccf167-6e68-43b3-a4cd-f1d8b3a75880",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg",
+          "mode": "list",
+          "cachedResultName": "unicorn-store-product-n8n-automation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 205013727,
+          "mode": "list",
+          "cachedResultName": "Image_References",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg/edit#gid=205013727"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "product_id",
+              "lookupValue": "={{ $json.product_id }}"
+            },
+            {
+              "lookupColumn": "active",
+              "lookupValue": "YES"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2864,
+        912
+      ],
+      "id": "4a73a997-f844-43bf-b9be-3d0d9ca04682",
+      "name": "Lấy 3 ảnh gốc",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Xfbft0uYao6WVoCN",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const shuffled = [...items];\n\nfor (let i = shuffled.length - 1; i > 0; i--) {\n  const j = Math.floor(Math.random() * (i + 1));\n  [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];\n}\n\nreturn shuffled.slice(0, 2);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3088,
+        912
+      ],
+      "id": "591d585c-11a1-47b5-9a2b-9ff9d9ac07b0",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.reference_image_url.match(/\\/d\\/([^/]+)/)[1] }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        3312,
+        912
+      ],
+      "id": "2a587ddf-2442-43c5-8fb8-88b5eb7e1bcb",
+      "name": "Download file"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "edit",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-image-2",
+          "mode": "list",
+          "cachedResultName": "GPT-IMAGE-2"
+        },
+        "prompt": "Create a premium, photorealistic footwear fashion editorial image using the supplied product image as the exact product reference.\n\nThe image must feel like a natural high-end fashion campaign, not a generic AI studio render. Show an attractive adult model wearing the exact footwear from the reference.\n\nMODEL AND STYLING:\nChoose a male or female adult model, outfit, pose, and environment that genuinely suit the footwear’s design, color, and intended style. Do not always use the same gender, clothing, or setting.\n\nExamples of appropriate styling:\n- casual slides or sandals: relaxed modern casual wear, minimal streetwear, resort wear, linen, denim, shorts, wide-leg trousers, or a simple dress;\n- sporty footwear: clean athletic or urban streetwear;\n- refined sandals: elegant casual or feminine/masculine smart-casual styling.\n\nCOMPOSITION:\nCreate a close fashion detail shot from around the waist, thighs, or knees down to the feet. Do not show the model’s face or head.\nThe footwear is the main subject: both feet wearing the footwear must be clearly visible and occupy approximately 40–55% of the frame.\nUse an editorial camera angle close to foot level or a natural seated/standing pose. One foot may be closer to the camera for emphasis.\nA hand may naturally adjust the footwear only when the real product has a strap, buckle, or adjustable feature visible in the reference image.\nUse realistic skin texture, anatomically correct feet and hands, soft natural sunlight or refined indoor lighting, believable shadows, and a stylish but uncluttered setting.\n\nSTRICT PRODUCT FIDELITY:\nTreat the supplied footwear image as a locked product reference, not as inspiration.\nThe footwear must remain exactly the same as the source image: same color, silhouette, sole shape and height, straps, toe opening, material, texture, proportions, and visible details.\nDo not redesign, simplify, exaggerate, replace, or combine the product with another shoe.\nDo not add any buckle, strap, lace, seam, pattern, platform, logo, or decorative detail that is not present in the supplied image.\n\nNo text, no watermark, no brand logo, no price tag, no collage.",
+        "images": {
+          "values": [
+            {}
+          ]
+        },
+        "quality": "medium",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3,
+      "position": [
+        3536,
+        912
+      ],
+      "id": "8215520d-b6cf-4938-a5df-13e9ad5fa7db",
+      "name": "Edit image",
+      "credentials": {
+        "openAiApi": {
+          "id": "PkOXBy7WSNQyoRwG",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg",
+          "mode": "list",
+          "cachedResultName": "unicorn-store-product-n8n-automation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 216361566,
+          "mode": "list",
+          "cachedResultName": "Marketplace_Assets",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg/edit#gid=216361566"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "product_id",
+              "lookupValue": "={{ $json.product_id }}"
+            },
+            {
+              "lookupColumn": "active",
+              "lookupValue": "YES"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2960,
+        1184
+      ],
+      "id": "0c054d03-14ac-47be-be7a-d62f22aedd3c",
+      "name": "Lấy ảnh sàn - Marketplace_Assets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Xfbft0uYao6WVoCN",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const shuffled = [...items];\n\nfor (let i = shuffled.length - 1; i > 0; i--) {\n  const j = Math.floor(Math.random() * (i + 1));\n  [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];\n}\n\nreturn shuffled.slice(0, 3);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3152,
+        1184
+      ],
+      "id": "46ded092-43ef-468b-a109-bdab3fd6a663",
+      "name": "Chọn ngẫu nhiên 3 ảnh sàn"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "47c9ffe9-bdfd-4391-bd56-a9c3df98af33",
+              "leftValue": "={{ $json.file_name }}",
+              "rightValue": "NoBrandLogo",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        3376,
+        1184
+      ],
+      "id": "7ab7e947-462f-42d2-802a-6bac78b5de12",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.marketplace_image_url.match(/\\/d\\/([^/]+)/)[1] }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        4224,
+        1184
+      ],
+      "id": "9d86f66d-5f04-44d7-894a-4323ab07a44f",
+      "name": "Tải ảnh sàn — đã có logo",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "u2L8ovbNmiAXVqg5",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.marketplace_image_url.match(/\\/d\\/([^/]+)/)[1] }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        3728,
+        1040
+      ],
+      "id": "7133b33e-2f3d-488f-a241-0cc54ce9c29a",
+      "name": "Tải ảnh sàn — chưa có logo",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "u2L8ovbNmiAXVqg5",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1PxByOS-SkOuP7rPwSPx1w_sKEpiyVFyb",
+          "mode": "id"
+        },
+        "options": {
+          "binaryPropertyName": "logo"
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        3968,
+        912
+      ],
+      "id": "4eeaf191-405f-47ee-98b6-3267472dec0d",
+      "name": "Tải logo Unicorn",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "u2L8ovbNmiAXVqg5",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "resize",
+        "dataPropertyName": "logo",
+        "width": 400,
+        "height": 105,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        4448,
+        912
+      ],
+      "id": "4345346a-2d3f-444b-989c-6bf7e36f9d12",
+      "name": "Thu nhỏ logo 240px"
+    },
+    {
+      "parameters": {
+        "operation": "composite",
+        "dataPropertyNameComposite": "logo",
+        "positionX": 500,
+        "positionY": 40,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        4736,
+        912
+      ],
+      "id": "73027829-de5a-43b1-924a-7c7e79cbf179",
+      "name": "Branding renderer — logo góc phải"
+    },
+    {
+      "parameters": {
+        "operation": "crop",
+        "dataPropertyName": "logo",
+        "width": 1303,
+        "height": 242,
+        "positionX": 260,
+        "positionY": 346,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        4192,
+        912
+      ],
+      "id": "52ea4378-348c-4683-bfee-e462ea151f3a",
+      "name": "Cắt nền trống logo"
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input.all().map((item) => {\n  const { logo, ...binary } = item.binary ?? {};\n\n  return {\n    ...item,\n    binary,\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5376,
+        1168
+      ],
+      "id": "4c2738a2-ada1-4bb7-a213-ff159ea9a5ac",
+      "name": "Mode: Run Once for All Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        5072,
+        1168
+      ],
+      "id": "585ceb1b-adaa-4ba3-8a30-089f477e218b",
+      "name": "Gộp 2 ảnh AI + 3 ảnh sàn1"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        5648,
+        1440
+      ],
+      "id": "bee7f8ce-09ff-4df2-ae9b-a4528fa07990",
+      "name": "Gộp ảnh và caption"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nif (items.length !== 5) {\n  throw new Error(`Cần đúng 5 ảnh, hiện có ${items.length} ảnh`);\n}\n\nconst caption = items.find((item) => item.json.text)?.json.text;\n\nif (!caption) {\n  throw new Error('Không tìm thấy caption');\n}\n\nconst binary = {};\n\nitems.forEach((item, index) => {\n  if (!item.binary?.data) {\n    throw new Error(`Ảnh thứ ${index + 1} không có binary data`);\n  }\n\n  binary[`image_${index + 1}`] = item.binary.data;\n});\n\nconst marketplaceItem = items.find((item) => item.json.product_id);\n\nconst existingRequestId = items.find(\n  (item) => item.json.request_id,\n)?.json.request_id;\n\nconst requestId =\n  existingRequestId ||\n  `REQ-${new Date().toISOString().replace(/\\D/g, '').slice(0, 14)}-${Math.random()\n    .toString(36)\n    .slice(2, 6)\n    .toUpperCase()}`;\n\nreturn [{\n  json: {\n    request_id: requestId,\n    product_id: marketplaceItem?.json.product_id ?? '',\n    caption,\n    image_count: items.length,\n  },\n  binary,\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5888,
+        1440
+      ],
+      "id": "d07ed13c-3f16-4b37-843f-018a7a20728f",
+      "name": "Gom ALL thành 1 bài nháp"
+    },
+    {
+      "parameters": {
+        "resume": "form",
+        "formTitle": "={{ 'Duyệt bài đăng Unicorn Store — ' + $json.product_id }}",
+        "formDescription": "={{ $json.caption + '\\n\\n✅ ' + $json.review_note }}",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Quyết định đăng bài",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Đồng ý đăng"
+                  },
+                  {
+                    "option": "Không đăng"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Chọn ngày đăng",
+              "fieldType": "date",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Chọn giờ đăng",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "8:30"
+                  },
+                  {
+                    "option": "12:00"
+                  },
+                  {
+                    "option": "19:30"
+                  }
+                ]
+              },
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        7376,
+        1440
+      ],
+      "id": "1a791eca-9455-4e18-9b09-fee1e26a3bbd",
+      "name": "Duyệt bài đăng",
+      "webhookId": "8577cee5-e682-4b2a-b4eb-9f3887bb0a07"
+    },
+    {
+      "parameters": {
+        "jsCode": "const draft = $input.first();\n\nconst imageKeys = Object.keys(draft.binary ?? {})\n  .filter((key) => /^image_\\d+$/.test(key))\n  .sort((a, b) => Number(a.split('_')[1]) - Number(b.split('_')[1]));\n\nif (imageKeys.length !== 5) {\n  throw new Error(`Cần đúng 5 ảnh, hiện có ${imageKeys.length}`);\n}\n\nreturn imageKeys.map((key, index) => {\n  const source = draft.binary[key];\n  const extension = source.fileExtension || 'jpg';\n  const fileName =\n    `${draft.json.product_id}-preview-${String(index + 1).padStart(2, '0')}.${extension}`;\n\n  return {\n    json: {\n  product_id: draft.json.product_id,\n  caption: draft.json.caption,\n  telegram_caption: index === 0 ? draft.json.caption : '',\n  image_number: index + 1,\n  drive_file_name: fileName,\n},\n    binary: {\n      data: {\n        ...source,\n        fileName,\n      },\n    },\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6112,
+        1440
+      ],
+      "id": "5d1a6ab2-5eb3-425d-b95a-8b8b79d09682",
+      "name": "Tách 5 ảnh → Drive Preview"
+    },
+    {
+      "parameters": {
+        "name": "={{ $binary.data.fileName }}",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1CAKQYwy1b5u7dZ3oAxVLzD68N0ELjxvH",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        6400,
+        1552
+      ],
+      "id": "de2a4e71-709e-48e9-8f63-8ad83b3e05a1",
+      "name": "Upload 5 ảnh preview lên Drive",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "u2L8ovbNmiAXVqg5",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "-5109360611",
+        "binaryData": true,
+        "additionalFields": {
+          "caption": "={{ $json.telegram_caption }}"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        6528,
+        1344
+      ],
+      "id": "2f94645d-f184-461e-acc6-1942661edc84",
+      "name": "Telegram Unicorn Bot",
+      "webhookId": "b0a8937d-7c74-483c-9614-f5c42131f94f"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        6944,
+        1440
+      ],
+      "id": "7e4ec816-1ffb-49cd-8e77-17974447b000",
+      "name": "Chờ Telegram và Drive xong"
+    },
+    {
+      "parameters": {
+        "jsCode": "const draft = $('Gom ALL thành 1 bài nháp').first();\n\nreturn [{\n  json: {\n    ...draft.json,\n    review_note: 'Đã gửi 5 ảnh và caption qua Telegram. Hãy xem Telegram trước khi chọn quyết định.',\n  },\n  binary: draft.binary,\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        7152,
+        1440
+      ],
+      "id": "73ce6309-8bc9-4379-bf33-70027282fcd8",
+      "name": "Trở lại bài nháp để duyệt"
+    },
+    {
+      "parameters": {
+        "url": "https://graph.instagram.com/v24.0/17841470955393699",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "fields",
+              "value": "id,username"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        7392,
+        1136
+      ],
+      "id": "637b0b7b-03f5-46fd-ab5c-6d71e1cfea8b",
+      "name": "Test kết nối Instagram",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "TGKPXfvvaNwfdDwA",
+          "name": "Query Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "reader",
+            "type": "anyone"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        6656,
+        1552
+      ],
+      "id": "1a9abb9c-de07-4e5d-843b-ca2d785db7df",
+      "name": "Công khai 5 ảnh cho Instagram",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "u2L8ovbNmiAXVqg5",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const form = $input.first().json;\nconst draft = $('Gom ALL thành 1 bài nháp').first();\n\nconst date = form['Chọn ngày đăng'];\nconst time = form['Chọn giờ đăng'];\n\nif (!date || !time) {\n  throw new Error('Bạn chưa chọn đủ ngày và giờ đăng');\n}\n\nreturn [{\n  json: {\n    ...draft.json,\n\n    review_decision: form['Quyết định đăng bài'],\n    scheduled_date: date,\n    scheduled_time: time,\n    scheduled_at: `${date}T${time}:00+07:00`,\n\n    approval_submitted_at: form.submittedAt,\n  },\n  binary: draft.binary,\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        7600,
+        1440
+      ],
+      "id": "083ef4e7-5c51-4272-9738-59e7063b90e6",
+      "name": "Khôi phục bài nháp và tạo lịch đăng"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "a59cf308-221f-4e3b-822d-e3d846f314b2",
+              "leftValue": "={{ $json.review_decision }}",
+              "rightValue": "Đồng ý đăng",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        7824,
+        1440
+      ],
+      "id": "1733152b-5663-4f09-9e4f-dfdf359bf07d",
+      "name": "Chỉ đăng khi đã đồng ý"
+    },
+    {
+      "parameters": {
+        "resume": "specificTime",
+        "dateTime": "={{ $json.scheduled_at }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        8640,
+        1120
+      ],
+      "id": "93465887-d4df-4e7b-9102-9a35a380ea9c",
+      "name": "Chờ đến lịch đã chọn",
+      "webhookId": "b68e1044-f069-4e10-b46b-809e79902e27"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.instagram.com/v24.0/{{ $json.instagram_user_id }}/media",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "image_url",
+              "value": "={{ $json.image_url }}"
+            },
+            {
+              "name": "is_carousel_item",
+              "value": "true"
+            },
+            {
+              "name": "media_type",
+              "value": "IMAGE"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        8944,
+        1232
+      ],
+      "id": "0568f2af-ac15-4c28-aa2b-de0835bd04b3",
+      "name": "Instagram — tạo 5 ảnh carousel",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "TGKPXfvvaNwfdDwA",
+          "name": "Query Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const containers = $input.all()\n  .map(item => item.json.id)\n  .filter(Boolean);\n\nif (containers.length !== 5) {\n  throw new Error(`Cần đủ 5 container ảnh, hiện có ${containers.length}`);\n}\n\nconst firstImage = $('Chuẩn bị ảnh cho sàn').first().json;\n\nreturn [{\n  json: {\n    instagram_user_id: firstImage.instagram_user_id,\n    caption: firstImage.caption,\n    children: containers.join(','),\n  },\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        9168,
+        1232
+      ],
+      "id": "f0f46a92-bd6e-4602-90b5-e7dc16e0c75a",
+      "name": "Gộp 5 ảnh thành carousel Instagram"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.instagram.com/v24.0/{{ $json.instagram_user_id }}/media",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "media_type",
+              "value": "CAROUSEL"
+            },
+            {
+              "name": "children",
+              "value": "={{ $json.children }}"
+            },
+            {
+              "name": "caption",
+              "value": "={{ $json.caption }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        9392,
+        1232
+      ],
+      "id": "c3029df5-e9f0-4960-85a6-39b6a0416641",
+      "name": "Instagram — tạo bài carousel",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "TGKPXfvvaNwfdDwA",
+          "name": "Query Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.instagram.com/v24.0/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "fields",
+              "value": "status_code"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        9616,
+        1232
+      ],
+      "id": "2cc3d81a-8e52-4620-a507-ac362b91fb40",
+      "name": "Instagram — kiểm tra carousel sẵn sàng",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "TGKPXfvvaNwfdDwA",
+          "name": "Query Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.instagram.com/v24.0/27663207950044918/media_publish",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "creation_id",
+              "value": "={{ $json.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        9840,
+        1232
+      ],
+      "id": "409753ed-e26d-46eb-817b-7d595a21a3b4",
+      "name": "Instagram — publish carousel",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "TGKPXfvvaNwfdDwA",
+          "name": "Query Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.instagram.com/v24.0/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "fields",
+              "value": "permalink"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        10064,
+        1232
+      ],
+      "id": "4a35e9ac-9a46-4aee-ba14-eed15b8dba6b",
+      "name": "Instagram — lấy link bài đã đăng",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "TGKPXfvvaNwfdDwA",
+          "name": "Query Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg",
+          "mode": "list",
+          "cachedResultName": "unicorn-store-product-n8n-automation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2138707289,
+          "mode": "list",
+          "cachedResultName": "Run_Queue",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg/edit#gid=2138707289"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "request_id": "={{ $json.request_id }}",
+            "product_id": "={{ $json.product_id }}",
+            "scheduled_at": "={{ $json.product_id }}",
+            "status": "Đã lên lịch",
+            "platforms": "facebook,instagram",
+            "caption": "={{ $json.caption }}",
+            "created_at": "={{ $now.setZone('Asia/Ho_Chi_Minh').toISO() }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "request_id",
+              "displayName": "request_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "product_id",
+              "displayName": "product_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "scheduled_at",
+              "displayName": "scheduled_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "platforms",
+              "displayName": "platforms",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "instagram_url",
+              "displayName": "instagram_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "facebook_url",
+              "displayName": "facebook_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "error_message",
+              "displayName": "error_message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "posted_at",
+              "displayName": "posted_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        8224,
+        1440
+      ],
+      "id": "4db70635-9b83-442f-8ead-f6c22db830b8",
+      "name": "Google Sheets — tạo lịch Run_Queue",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Xfbft0uYao6WVoCN",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://graph.facebook.com/v26.0/199011090719708",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "fields",
+              "value": "id,name"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        7712,
+        1136
+      ],
+      "id": "1669819e-9834-4af1-a0f9-45f56b22a4d2",
+      "name": "Test kết nối Facebook Page",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "TGKPXfvvaNwfdDwA",
+          "name": "Query Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v26.0/199011090719708/photos",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $json.image_url }}"
+            },
+            {
+              "name": "published",
+              "value": "false"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        8960,
+        1600
+      ],
+      "id": "6cd02f93-8803-436d-ae13-6eca83ddb74c",
+      "name": "Facebook — upload 5 ảnh chưa đăng"
+    },
+    {
+      "parameters": {
+        "jsCode": "const photoIds = $input.all()\n  .map(item => item.json.id)\n  .filter(Boolean);\n\nif (photoIds.length !== 5) {\n  throw new Error(`Cần đủ 5 ảnh Facebook, hiện có ${photoIds.length}`);\n}\n\nconst source = $('Chuẩn bị ảnh cho sàn').first().json;\n\nreturn [{\n  json: {\n    page_id: '199011090719708',\n    caption: source.caption,\n    attached_media: JSON.stringify(\n      photoIds.map((id) => ({ media_fbid: id }))\n    ),\n  },\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        9184,
+        1600
+      ],
+      "id": "fa23aa04-23d6-47c2-8e1f-f702f8502200",
+      "name": "Gộp 5 ảnh thành bài Facebook"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v26.0/{{ $json.page_id }}/feed",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "message",
+              "value": "={{ $json.caption }}"
+            },
+            {
+              "name": "attached_media",
+              "value": "={{ $json.attached_media }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        9408,
+        1600
+      ],
+      "id": "ceda424a-8b9a-42ff-beb5-b3af9c8d4025",
+      "name": "Facebook — đăng bài 5 ảnh",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "TGKPXfvvaNwfdDwA",
+          "name": "Query Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const id = $input.first().json.id;\n\nconst [pageId, postId] = id.split('_');\n\nif (!pageId || !postId) {\n  throw new Error(`Post ID không đúng định dạng: ${id}`);\n}\n\nreturn [{\n  json: {\n    facebook_post_id: id,\n    facebook_url: `https://www.facebook.com/${pageId}/posts/${postId}`,\n  },\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        9632,
+        1600
+      ],
+      "id": "3d8a74c4-f297-4344-8065-f60655003deb",
+      "name": "Facebook — tạo link bài đã đăng"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg",
+          "mode": "list",
+          "cachedResultName": "unicorn-store-product-n8n-automation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2138707289,
+          "mode": "list",
+          "cachedResultName": "Run_Queue",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg/edit#gid=2138707289"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "request_id": "={{ $('Khôi phục bài nháp và tạo lịch đăng').first().json.request_id }}",
+            "status": "=Đã đăng Instagram",
+            "instagram_url": "={{ $json.permalink }}",
+            "posted_at": "={{ $now.setZone('Asia/Ho_Chi_Minh').toISO() }}"
+          },
+          "matchingColumns": [
+            "request_id"
+          ],
+          "schema": [
+            {
+              "id": "request_id",
+              "displayName": "request_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "product_id",
+              "displayName": "product_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "scheduled_at",
+              "displayName": "scheduled_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "platforms",
+              "displayName": "platforms",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "instagram_url",
+              "displayName": "instagram_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "facebook_url",
+              "displayName": "facebook_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "error_message",
+              "displayName": "error_message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "posted_at",
+              "displayName": "posted_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        10384,
+        1232
+      ],
+      "id": "877fe28a-aee0-4e24-a860-177461a74e33",
+      "name": "Google Sheets — cập nhật Run_Queue",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Xfbft0uYao6WVoCN",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg",
+          "mode": "list",
+          "cachedResultName": "unicorn-store-product-n8n-automation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2138707289,
+          "mode": "list",
+          "cachedResultName": "Run_Queue",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R0Ojh8n_G7PzNucj9Dp3jq_v3G6Aqe9us7GkjEIbLTg/edit#gid=2138707289"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "request_id": "={{ $('Khôi phục bài nháp và tạo lịch đăng').first().json.request_id }}",
+            "facebook_url": "={{ $json.facebook_url }}",
+            "status": "={{ $json.facebook_url }}",
+            "posted_at": "={{ $now.setZone('Asia/Ho_Chi_Minh').toISO() }}"
+          },
+          "matchingColumns": [
+            "request_id"
+          ],
+          "schema": [
+            {
+              "id": "request_id",
+              "displayName": "request_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "product_id",
+              "displayName": "product_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "scheduled_at",
+              "displayName": "scheduled_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "platforms",
+              "displayName": "platforms",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "instagram_url",
+              "displayName": "instagram_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "facebook_url",
+              "displayName": "facebook_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "error_message",
+              "displayName": "error_message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "posted_at",
+              "displayName": "posted_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        9856,
+        1600
+      ],
+      "id": "80adbbe1-20d8-41f7-a0c2-b481143d2f44",
+      "name": "Google Sheets — lưu link facebook",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Xfbft0uYao6WVoCN",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const post = $input.first().json;\nconst uploaded = $('Upload 5 ảnh preview lên Drive').all();\n\nconst files = uploaded\n  .map((item, index) => {\n    const id = item.json.id;\n    const name = item.json.name || `Ảnh ${index + 1}`;\n    const match = name.match(/preview-(\\d+)/i);\n\n    return {\n      id,\n      order: match ? Number(match[1]) : index + 1,\n    };\n  })\n  .filter((file) => file.id)\n  .sort((a, b) => a.order - b.order);\n\nif (files.length !== 5) {\n  throw new Error(`Cần 5 ảnh Drive, hiện có ${files.length}`);\n}\n\nreturn files.map((file, index) => ({\n  json: {\n    instagram_user_id: '27663207950044918',\n    image_number: index + 1,\n    image_url: `https://drive.google.com/uc?export=download&id=${file.id}`,\n    caption: post.caption,\n  },\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        8464,
+        1440
+      ],
+      "id": "5cb2c05d-f97d-4952-bb1a-9bde71f2651e",
+      "name": "Chuẩn bị ảnh cho sàn"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Tạo bài — Dép bánh mì NS01": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tạo bài — Đế trấu NS02": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tạo bài — Đế trấu NS04": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tạo bài — Dép lá NS07": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tạo bài — Mũ snapback": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tạo bài — Dép NS05": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tạo bài — Túi": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tạo bài — Shonhou ST405": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tạo bài — Shonhou ST406": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tạo bài — Shonhou ST407": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tạo bài — Shonhou ST408": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Tạo caption Facebook",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Tạo caption Facebook",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Lấy 3 ảnh gốc",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Lấy ảnh sàn - Marketplace_Assets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Tạo bài — Dép bánh mì NS01",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tạo bài — Đế trấu NS02",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tạo bài — Dép lá NS07",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tạo bài — Đế trấu NS04",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tạo bài — Dép NS05",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tạo bài — Mũ snapback",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tạo bài — Túi",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tạo bài — Shonhou ST405",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tạo bài — Shonhou ST406",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tạo bài — Shonhou ST407",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tạo bài — Shonhou ST408",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lấy 3 ảnh gốc": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "Edit image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit image": {
+      "main": [
+        [
+          {
+            "node": "Tải logo Unicorn",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lấy ảnh sàn - Marketplace_Assets": {
+      "main": [
+        [
+          {
+            "node": "Chọn ngẫu nhiên 3 ảnh sàn",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chọn ngẫu nhiên 3 ảnh sàn": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Tải ảnh sàn — chưa có logo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tải ảnh sàn — đã có logo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tải ảnh sàn — đã có logo": {
+      "main": [
+        [
+          {
+            "node": "Gộp 2 ảnh AI + 3 ảnh sàn1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Tải ảnh sàn — chưa có logo": {
+      "main": [
+        [
+          {
+            "node": "Tải logo Unicorn",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tải logo Unicorn": {
+      "main": [
+        [
+          {
+            "node": "Cắt nền trống logo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Thu nhỏ logo 240px": {
+      "main": [
+        [
+          {
+            "node": "Branding renderer — logo góc phải",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cắt nền trống logo": {
+      "main": [
+        [
+          {
+            "node": "Thu nhỏ logo 240px",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Branding renderer — logo góc phải": {
+      "main": [
+        [
+          {
+            "node": "Gộp 2 ảnh AI + 3 ảnh sàn1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mode: Run Once for All Items": {
+      "main": [
+        [
+          {
+            "node": "Gộp ảnh và caption",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tạo caption Facebook": {
+      "main": [
+        [
+          {
+            "node": "Gộp ảnh và caption",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Gộp 2 ảnh AI + 3 ảnh sàn1": {
+      "main": [
+        [
+          {
+            "node": "Mode: Run Once for All Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gộp ảnh và caption": {
+      "main": [
+        [
+          {
+            "node": "Gom ALL thành 1 bài nháp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gom ALL thành 1 bài nháp": {
+      "main": [
+        [
+          {
+            "node": "Tách 5 ảnh → Drive Preview",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Duyệt bài đăng": {
+      "main": [
+        [
+          {
+            "node": "Khôi phục bài nháp và tạo lịch đăng",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tách 5 ảnh → Drive Preview": {
+      "main": [
+        [
+          {
+            "node": "Telegram Unicorn Bot",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Upload 5 ảnh preview lên Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload 5 ảnh preview lên Drive": {
+      "main": [
+        [
+          {
+            "node": "Công khai 5 ảnh cho Instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Unicorn Bot": {
+      "main": [
+        [
+          {
+            "node": "Chờ Telegram và Drive xong",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chờ Telegram và Drive xong": {
+      "main": [
+        [
+          {
+            "node": "Trở lại bài nháp để duyệt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trở lại bài nháp để duyệt": {
+      "main": [
+        [
+          {
+            "node": "Duyệt bài đăng",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test kết nối Instagram": {
+      "main": [
+        []
+      ]
+    },
+    "Công khai 5 ảnh cho Instagram": {
+      "main": [
+        [
+          {
+            "node": "Chờ Telegram và Drive xong",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Khôi phục bài nháp và tạo lịch đăng": {
+      "main": [
+        [
+          {
+            "node": "Chỉ đăng khi đã đồng ý",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chỉ đăng khi đã đồng ý": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets — tạo lịch Run_Queue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chờ đến lịch đã chọn": {
+      "main": [
+        []
+      ]
+    },
+    "Instagram — tạo 5 ảnh carousel": {
+      "main": [
+        [
+          {
+            "node": "Gộp 5 ảnh thành carousel Instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gộp 5 ảnh thành carousel Instagram": {
+      "main": [
+        [
+          {
+            "node": "Instagram — tạo bài carousel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instagram — tạo bài carousel": {
+      "main": [
+        [
+          {
+            "node": "Instagram — kiểm tra carousel sẵn sàng",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instagram — kiểm tra carousel sẵn sàng": {
+      "main": [
+        [
+          {
+            "node": "Instagram — publish carousel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instagram — publish carousel": {
+      "main": [
+        [
+          {
+            "node": "Instagram — lấy link bài đã đăng",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets — tạo lịch Run_Queue": {
+      "main": [
+        [
+          {
+            "node": "Chuẩn bị ảnh cho sàn",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instagram — lấy link bài đã đăng": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets — cập nhật Run_Queue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook — upload 5 ảnh chưa đăng": {
+      "main": [
+        [
+          {
+            "node": "Gộp 5 ảnh thành bài Facebook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gộp 5 ảnh thành bài Facebook": {
+      "main": [
+        [
+          {
+            "node": "Facebook — đăng bài 5 ảnh",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook — đăng bài 5 ảnh": {
+      "main": [
+        [
+          {
+            "node": "Facebook — tạo link bài đã đăng",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook — tạo link bài đã đăng": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets — lưu link facebook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chuẩn bị ảnh cho sàn": {
+      "main": [
+        [
+          {
+            "node": "Facebook — upload 5 ảnh chưa đăng",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Instagram — tạo 5 ảnh carousel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "eeb674ff-44c6-4c90-9db8-2ee9e0c6805f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f72b4e995678722a987ec6f05c7eb49153a0f011db511892aa1cf11ab958cf6a"
+  },
+  "nodeGroups": [],
+  "id": "dF4ZU3O0JwQih2jw",
+  "tags": []
+}
